@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Custom styles for the gradient navbar */
+
+        body {
+            background: linear-gradient(to right, #000000, #000000);
+            color: white;
+        }
+
+        .gradient-navbar {
+            background: linear-gradient(to right, #000000, #ff76d8);
+            color: white;
+        }
+
+        .nav {
+            background: linear-gradient(to right, #000000, #ff76d8);
+            color: white;
+        }
+
+        .tab-content {
+            background: linear-gradient(to right, #000000, #ff76d8);
+            color: white;
+            padding: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gradient-navbar">
+        <h2>MOBILE APPLICATION AND RAD</h2>
+        <p>By John Neri B. Escobella</p>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#contact">ABOUT ME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#History">HISTORY</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#rad">RAD</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane container active" id="home"></div>
+        <div class="tab-pane container fade" id="contact"></div>
+        <div class="tab-pane container fade" id="History"></div>
+        <div class="tab-pane container fade" id="rad"></div>
+    </div>
+
+    <script>
+        function loadContentIntoTab(tabId, contentUrl) {
+            $.get(contentUrl, function (data) {
+                $(tabId).html(data);
+            });
+        }
+
+        // Load the content of "home.html" into the "home" tab
+        loadContentIntoTab("#home", "home.html");
+        loadContentIntoTab("#History", "History.html");
+        loadContentIntoTab("#contact", "about.html");
+        loadContentIntoTab("#rad", "rad.html");
+    </script>
+
+
+
+
+</body>
+
+</html>
